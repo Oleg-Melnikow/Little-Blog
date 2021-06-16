@@ -25,9 +25,7 @@ const MediaLink = (props: MediaLinkPropType) => {
 
     return (
         <IconButton color="inherit">
-            <a href={`https://www.${media}.com/`} target="_blank" style={{color: "inherit"}} rel="noreferrer">
-                {component}
-            </a>
+            <a href={`https://www.${media}.com/`} target="_blank" rel="noreferrer">{component}</a>
         </IconButton>
     )
 }
