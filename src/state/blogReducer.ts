@@ -3,7 +3,8 @@ import avatar from "./../assets/images/avatar.png";
 export type initialStateType = {
     posts: Array<postType>,
     currentPage: number,
-    pageSize: number
+    pageSize: number,
+    post: postType | null
 }
 
 export type postType = {
@@ -64,7 +65,7 @@ export const initialState: initialStateType = {
         },
         {
             id: 4,
-            title: "It’s no secret",
+            title: "What happen?",
             description: `It’s no secret that the digital industry is booming. 
         From exciting startups to global brands, companies are reaching out to digital agencies, 
         responding to the new possibilities available. 
@@ -81,7 +82,7 @@ export const initialState: initialStateType = {
         },
         {
             id: 5,
-            title: "It’s no secret",
+            title: "How are you?",
             description: `It’s no secret that the digital industry is booming. 
         From exciting startups to global brands, companies are reaching out to digital agencies, 
         responding to the new possibilities available. 
@@ -97,6 +98,7 @@ export const initialState: initialStateType = {
             author: {name: "John", avatar: avatar}
         },
     ],
+    post: null as postType | null,
     currentPage: 1,
     pageSize: 6
 }
@@ -119,6 +121,11 @@ export const blogReducer = (state: initialStateType = initialState, action: Acti
                 ...state,
                 currentPage: action.page
             }
+        case "blogReducer/SET_POST":
+            return {
+                ...state,
+                post: state.posts.filter(p => p.id === action.postId).reduce(p => ({...p}))
+            }
         default:
             return state;
     }
@@ -130,8 +137,9 @@ export const addPost = (post: { title: string, description: string, }) => ({
 } as const);
 
 export const nextPage = (page: number) => ({type: "blogReducer/NEXT_PAGE", page} as const);
+export const setPost = (postId: number) => ({type: "blogReducer/SET_POST", postId} as const);
 
-export type ActionsType = ReturnType<typeof addPost> | ReturnType<typeof nextPage>;
+export type ActionsType = ReturnType<typeof addPost> | ReturnType<typeof nextPage> | ReturnType<typeof setPost>;
 
 function formatDate() {
     let date = new Date();

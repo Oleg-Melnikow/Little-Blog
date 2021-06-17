@@ -1,5 +1,6 @@
 .itemsText {
     text-align: justify;
+    background: #d1d1d1;
 }
 
 .itemsText p{
@@ -18,7 +19,13 @@
     width: 400px;
     height: 100%;
     margin: 10px;
+    background: #aaa !important;
 }
+
+.root .cardHeader{
+    padding: 10px;
+}
+
 
 .button {
     justify-content: center;

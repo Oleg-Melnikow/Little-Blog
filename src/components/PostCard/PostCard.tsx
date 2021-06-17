@@ -11,7 +11,7 @@ import { Avatar } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 
 type PostCardPropsTYpe = {
-    post: postType
+    post: postType,
 }
 
 export function PostCard(props: PostCardPropsTYpe) {
@@ -19,8 +19,8 @@ export function PostCard(props: PostCardPropsTYpe) {
     const {title, description, dateAdd, author} = props.post;
 
     return (
-        <Card className={s.root} style={{background: "#aaa"}}>
-            <CardHeader
+        <Card className={s.root}>
+            <CardHeader className={s.cardHeader}
                 avatar={
                     <Avatar aria-label="recipe" src={author.avatar}/>
                 }
@@ -28,7 +28,7 @@ export function PostCard(props: PostCardPropsTYpe) {
                 subheader={dateAdd}
             />
             <CardActionArea>
-                <CardContent className={s.itemsText} style={{background: "#d1d1d1"}}>
+                <CardContent className={s.itemsText}>
                     <Typography gutterBottom variant="h5" component="h3">
                         {title}
                     </Typography>
