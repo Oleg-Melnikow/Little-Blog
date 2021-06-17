@@ -12,7 +12,6 @@ export type postType = {
     title: string,
     description: string,
     dateAdd: string,
-    likesCount: number
     author: {
         name: string,
         avatar: string
@@ -26,7 +25,6 @@ export const initialState: initialStateType = {
             title: "hello",
             description: "Hello",
             dateAdd: "Sep 14, 2019",
-            likesCount: 12,
             author: {name: "John", avatar: avatar}
         },
         {
@@ -43,7 +41,6 @@ export const initialState: initialStateType = {
         So, this article looks at how to make side projects work and why they’re worthwhile, 
         drawing on lessons learned from our development of the ux app.`,
             dateAdd: "Sep 17, 2020",
-            likesCount: 11,
             author: {name: "John", avatar: avatar}
         },
         {
@@ -60,7 +57,6 @@ export const initialState: initialStateType = {
         So, this article looks at how to make side projects work and why they’re worthwhile, 
         drawing on lessons learned from our development of the ux app.`,
             dateAdd: "Sep 21, 2020",
-            likesCount: 11,
             author: {name: "John", avatar: avatar}
         },
         {
@@ -77,7 +73,6 @@ export const initialState: initialStateType = {
         So, this article looks at how to make side projects work and why they’re worthwhile, 
         drawing on lessons learned from our development of the ux app.`,
             dateAdd: "September 24, 2020",
-            likesCount: 11,
             author: {name: "John", avatar: avatar}
         },
         {
@@ -94,7 +89,6 @@ export const initialState: initialStateType = {
         So, this article looks at how to make side projects work and why they’re worthwhile, 
         drawing on lessons learned from our development of the ux app.`,
             dateAdd: "Sep 29, 2020",
-            likesCount: 11,
             author: {name: "John", avatar: avatar}
         },
     ],
@@ -112,7 +106,6 @@ export const blogReducer = (state: initialStateType = initialState, action: Acti
                     id: state.posts.length + 1,
                     dateAdd: `${formatDate()}`,
                     author: {name: "John", avatar},
-                    likesCount: 2,
                     ...action.post
                 }]
             }
