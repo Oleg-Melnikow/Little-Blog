@@ -1,0 +1,29 @@
+.itemsText {
+    text-align: justify;
+}
+
+.itemsText p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    height: 100px;
+}
+
+.root span{
+    text-align: left;
+}
+
+.root {
+    width: 400px;
+    height: 100%;
+    margin: 10px;
+}
+
+.button {
+    justify-content: center;
+}
+
+.media {
+    min-height: 240px;
+}
