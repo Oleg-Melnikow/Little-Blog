@@ -1,0 +1,42 @@
+.post{
+    padding: 10px;
+}
+
+.info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 12px;
+    font-family: Lora, serif;
+    padding: 5px 0;
+    color: #666666;
+}
+
+.title {
+    font-size: 26px;
+    text-align: left;
+    padding: 5px 0;
+    letter-spacing: .8px;
+    line-height: 32px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.author img {
+    border-radius: 50%;
+    width: 30px;
+}
+
+.author span {
+    padding: 0 5px;
+}
+
+.description{
+    margin-top: 20px;
+    text-align: justify;
+    color: #222222;
+}
